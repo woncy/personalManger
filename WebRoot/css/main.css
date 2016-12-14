@@ -1,0 +1,25 @@
+@CHARSET "UTF-8";
+iframe 
+{
+	position: absolute;
+	left:0; 
+	top:0;
+}
+
+img{
+	background-color: darkgray;
+	height:538px;
+	width: 819px;
+	border-radius: 5px;
+	border: #aef7e7 ridge 5px;
+	margin-top: 105px;
+	
+}
+div{
+	width: 820px;
+	float: right;
+	position: absolute;
+	left:157px; 
+	top:0;
+}
+
