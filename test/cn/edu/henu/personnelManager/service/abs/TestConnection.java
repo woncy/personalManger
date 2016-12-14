@@ -16,5 +16,6 @@ public class TestConnection {
 		
 		session.getTransaction().commit();
 		session.close();
+		System.out.println("测试分支");
 	}
 }
