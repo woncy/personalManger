@@ -125,7 +125,7 @@ public class TestRecordService  {
 		graduate_Date.setMonth(6);
 		graduate_Date.setDate(1);
 		info.setGraduate_date(graduate_Date);
-		info.setHandset("13323659953");
+		info.setHand_set("7650221");
 		info.setTelephone("13323659953");
 		info.setLikes("象棋、跳棋");
 		info.setOnes_strong_suit("suit");
@@ -143,7 +143,7 @@ public class TestRecordService  {
 		duty.setDimission_date(new Date());
 		duty.setDimission_reason("不想干了");
 		duty.setDole_safety_NO("1154231564545");
-		duty.setFirst_pact_date(new Date());
+		duty.setFirst_pack_date(new Date());
 		duty.setMediocate_safety_NO("4541687169445451");
 		duty.setPact_end_date(new Date());
 		duty.setPact_start_date(new Date());

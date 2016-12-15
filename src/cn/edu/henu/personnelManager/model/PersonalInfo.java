@@ -12,25 +12,25 @@ import org.springframework.format.annotation.DateTimeFormat;
 @Entity(name="tb_personal_info")
 public class PersonalInfo implements Serializable{
 	/**
-	 * 
+	 * 个人资料
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Record record;
-	private String QQ;
-	private String Email;
-	private String handset;
-	private String telephone;
-	private String address;
-	private String postalcode;
-	private String second_school_age;
-	private String second_specilaty;
-	private String graduate_school;
-	private Date graduate_date;
-	private Date party_member_date;
-	private String computer_grade;
-	private String likes;
-	private String ones_strong_suit;
+	private Record record;					//档案
+	private String QQ;						//qq
+	private String hand_set;				//固定电话
+	private String Email;					//邮箱	
+	private String telephone;				//手机号
+	private String address;					//地址
+	private String postalcode;				//邮箱
+	private String second_school_age;		//毕业学校
+	private String second_specilaty;		//专业
+	private String graduate_school;			//学历
+	private Date graduate_date;				//毕业日期
+	private Date party_member_date;			//入党日期
+	private String computer_grade;			//计算机水平
+	private String likes;					//爱好
+	private String ones_strong_suit;		//特长
 	@Id
 	public int getId() {
 		return id;
@@ -52,6 +52,13 @@ public class PersonalInfo implements Serializable{
 	public void setQQ(String qQ) {
 		QQ = qQ;
 	}
+	@Column(length=15)
+	public String getHand_set() {
+		return hand_set;
+	}
+	public void setHand_set(String hand_set) {
+		this.hand_set = hand_set;
+	}
 	@Column(length=30)
 	public String getEmail() {
 		return Email;
@@ -59,13 +66,7 @@ public class PersonalInfo implements Serializable{
 	public void setEmail(String email) {
 		Email = email;
 	}
-	@Column(length=15)
-	public String getHandset() {
-		return handset;
-	}
-	public void setHandset(String handset) {
-		this.handset = handset;
-	}
+	
 	@Column(length=15,nullable=false)
 	public String getTelephone() {
 		return telephone;

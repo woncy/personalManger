@@ -14,24 +14,26 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Record implements Serializable{
 
 	/**
-	 * 
+	 * 档案实体类
 	 */
 	private static final long serialVersionUID = 1L;
-	private int id;
-	private String record_number;
-	private String name;
-	private String sex;
-	private Date birthDay;
-	private String photo;
-	private String ID_card;
-	private String marriaged;
-	private String address;
-	private String postalcode;
-	private String party_member;
-	private String school_age;
-	private String specialty;
-	private String foreign_language;
-	private String grade;
+	private int id;                      //id
+	private String record_number;		 //档案编号
+	private String name;				 //姓名
+	private String sex;					 //性别
+	private Date birthDay;               //生日
+	private String photo;				 //照片地址
+	private String ID_card;				 //身份证号
+	private String marriaged;			 //婚姻
+	private String address;				 //地址
+	private String postalcode;			 //邮政编号
+	private String party_member;		 //党员
+	private String school_age;			 //学厉
+	private String specialty;			 //专业
+	private String foreign_language;	 //外语语种
+	private String grade;				 //外语水平
+	private String nation;				 //民族
+	private String origin;				 //籍贯
 	@Id
 	@GeneratedValue
 	public int getId() {
@@ -103,7 +105,7 @@ public class Record implements Serializable{
 	public void setPostalcode(String postalcode) {
 		this.postalcode = postalcode;
 	}
-	@Column(nullable=false,columnDefinition="char(2)")
+	@Column(nullable=false,columnDefinition="char(10)")
 	public String getParty_member() {
 		return party_member;
 	}
@@ -138,9 +140,23 @@ public class Record implements Serializable{
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
+	@Column(length=40,nullable=true)
+	public String getNation() {
+		return nation;
+	}
+	public void setNation(String nation) {
+		this.nation = nation;
+	}
+	@Column(length=40,nullable=true)
+	public String getOrigin() {
+		return origin;
+	}
+	public void setOrigin(String origin) {
+		this.origin = origin;
+	}
 	@Override
 	public String toString() {
-		return "Record [id=" + id + ", name=" + name + "]";
+		return name;
 	}
 	
 	

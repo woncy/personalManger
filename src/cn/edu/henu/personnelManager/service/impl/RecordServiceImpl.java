@@ -76,15 +76,19 @@ public class RecordServiceImpl implements RecordService{
 			DutyInfo duty) {
 		
 		boolean b1 = recordDao.addRecord(record);
+		System.out.println("b1="+b1);
 		boolean b2 = false;
 		boolean b3 = false;
 		if(b1){
 		
 			personalInfo.setId(record.getId());
 			b2 = personalInfoDao.addPersonalInfo(personalInfo);
+			System.out.println("b2="+b2);
+			
 			if(b2){
 				duty.setId(record.getId());
 				b3 = dutyInfoDao.addDutyInfo(duty);
+				System.out.println("b3="+b3);
 				if(b3)
 					return true;
 				else {

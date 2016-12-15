@@ -6,44 +6,63 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>file_management</title>
-<link rel="stylesheet" type="text/css" href="css/file_management.css" />
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<style type="text/css">
+
+</style>
 </head>
-<body>
-<iframe src="navigation_bar.jsp" height="652px" width="157px" frameborder="0" scrolling="no" id="iframe1" ></iframe>
-<iframe src="top.jsp" height="105px" width="830px" frameborder="0" scrolling="no" id="iframe2"></iframe>
-<div>
-	<form action="" id="box">
-		<div id="div">
-			<p><a href="">全部职员</a></p>
-			<c:forEach items="">
-				<ul type="disc">
-					<li><a href="">销售部</a></li>
-				</ul>
-			</c:forEach>
+<body style="margin-left:0px;margin-top:0px;padding:0px">
+<div  class="panel panel-info">
+	<div class="panel-heading">
+		<div class="btn-group">
+		  <button type="button" class="btn btn-default">新建员工档案</button>
+		  <button type="button" class="btn btn-default">修改员工档案</button>
 		</div>
-		<table>
-			<tr>
-				<th>序号</th>
-				<th>档案编号</th>
-				<th>姓名</th>
-				<th>性别</th>
-				<th>部门</th>
-				<th>职务</th>
-			</tr>
-			<tr>
-				<c:forEach items="">
-					<th><a href=""></a></th>
-					<th><a href=""></a></th>
-					<th><a href=""></a></th>
-					<th><a href=""></a></th>
-					<th><a href=""></a></th>
-					<th><a href=""></a></th>
-				</c:forEach>
-			</tr>
-		</table>
-		<a href=""><button>新建员工档案</button></a>
-		<a href=""><button>修改员工档案</button></a>
-	</form>
+	</div>
+	<div class="panel-body">
+	    <div class="row">
+		  <div class=" col-sm-3">
+		  	全部职员
+		  	<select multiple class="form-control">
+			  <option>销售部</option>
+			  <option>开发部</option>
+			  <option>　　VB</option>
+			  <option>　　JAVa</option>
+			  <option>人事部</option>
+			</select>
+		  </div>
+		  <div class="col-sm-9" >
+		  <div class="panel panel-info" id="divId">
+			  	<table id="tableId"  class="table table-bordered table-hover  table-striped">
+			 		<tr class="info">
+			 			<td >序号　　</td>
+			 			<td>档案编号</td>
+			 			<td>姓名　　</td>
+			 			<td>性别　　</td>
+			 			<td>部门　　</td>
+			 			<td>职务　　</td>
+			 
+			 		</tr>
+			 		
+			 		
+			 	</table>
+			 	
+			 				<iframe src="records.jsp" id="iframepage" style="margin-left:0px;margin-top:0px" onload="changeFrameHeight()" marginheight="0" marginwidth="0"></iframe>
+			 	
+		 	</div>
+		 	
+		  </div>
+		</div>
+	</div>
 </div>
 </body>
+<script type="text/javascript">
+	function changeFrameHeight(){
+    var ifm= document.getElementById("iframepage"); 
+    ifm.width=document.getElementById("divId").clientWidth+16;
+}
+window.onresize=function(){  
+     changeFrameHeight();  
+} ;
+</script>
 </html>

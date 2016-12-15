@@ -26,6 +26,7 @@ public class RecordDaoImpl extends SuperDao implements RecordDao {
 		try{
 			this.getHibernateTemplate().save(record);
 		}catch(Exception e){
+	e.printStackTrace();
 			return false;
 		}
 		return true;

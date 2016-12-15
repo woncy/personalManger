@@ -1,11 +1,5 @@
 @CHARSET "UTF-8";
-iframe 
-{
-	position: absolute;
-	left:0; 
-	top:0;
-	
-}
+
 #content{
 	
 	margin-top: 105px;
@@ -21,8 +15,8 @@ img{
 	margin-top: 105px;
 	
 }
-div{
-	width: 820px;
+#d{
+
 	float: right;
 	position: absolute;
 	left:157px; 

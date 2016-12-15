@@ -19,21 +19,24 @@ public class DutyInfo implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Department dept;
-	private Record record;
-	private Date accession_date;
-	private Date dimission_date;
-	private String dimission_reason;
-	private Date first_pact_date;
-	private Date pact_start_date;
-	private Date pact_end_date;
-	private String bank_name;
-	private String bank_NO;
-	private String society_safety_NO;
-	private String dole_safety_NO;
-	private String mediocate_safety_NO;
-	private String comopo_safety_No;
-	private String accumulation_fund_NO;
+	private Department dept;			//部门
+	private Record record;				//档案
+	private Date accession_date;		//入职日期
+	private Date dimission_date;		//离职日期
+	private String dimission_reason;	//离职原因
+	private String duty_type;			//用工形式
+	private String duty_age;			//工龄
+	private String annuity_safety_NO;	//养老金
+	private Date first_pack_date;     //签署合同日期
+	private Date pact_start_date;		//培训开始日期
+	private Date pact_end_date;			//培训结束日期
+	private String bank_name;			//发卡银行
+	private String bank_NO;				//银行账号
+	private String society_safety_NO;	//社会保险
+	private String dole_safety_NO;		//失业保险
+	private String mediocate_safety_NO; //医疗保险
+	private String comopo_safety_No;	//工商保险
+	private String accumulation_fund_NO;//公积金号
 	@Id
 	public int getId() {
 		return id;
@@ -68,6 +71,14 @@ public class DutyInfo implements Serializable {
 	}
 	@Column(nullable=false)
 	@DateTimeFormat(pattern="yyyy-DD-MM")
+	public Date getFirst_pack_date() {
+		return first_pack_date;
+	}
+	public void setFirst_pack_date(Date first_pack_date) {
+		this.first_pack_date = first_pack_date;
+	}
+	@Column(nullable=false)
+	@DateTimeFormat(pattern="yyyy-DD-MM")
 	public Date getDimission_date() {
 		return dimission_date;
 	}
@@ -81,14 +92,7 @@ public class DutyInfo implements Serializable {
 	public void setDimission_reason(String dimission_reason) {
 		this.dimission_reason = dimission_reason;
 	}
-	@Column(nullable=false)
-	@DateTimeFormat(pattern="yyyy-DD-MM")
-	public Date getFirst_pact_date() {
-		return first_pact_date;
-	}
-	public void setFirst_pact_date(Date first_pact_date) {
-		this.first_pact_date = first_pact_date;
-	}
+	
 	@Column(nullable=false)
 	@DateTimeFormat(pattern="yyyy-DD-MM")
 	public Date getPact_start_date() {
@@ -154,6 +158,29 @@ public class DutyInfo implements Serializable {
 	public void setAccumulation_fund_NO(String accumulation_fund_NO) {
 		this.accumulation_fund_NO = accumulation_fund_NO;
 	}
+	@Column(length=30)
+	public String getDuty_type() {
+		return duty_type;
+	}
+	public void setDuty_type(String duty_type) {
+		this.duty_type = duty_type;
+	}
+	@Column(columnDefinition="char(6)")
+	public String getDuty_age() {
+		return duty_age;
+	}
+	
+	public void setDuty_age(String duty_age) {
+		this.duty_age = duty_age;
+	}
+	@Column(length=30)
+	public String getAnnuity_safety_NO() {
+		return annuity_safety_NO;
+	}
+	public void setAnnuity_safety_NO(String annuity_safety_NO) {
+		this.annuity_safety_NO = annuity_safety_NO;
+	}
+	
 	
 	
 }
