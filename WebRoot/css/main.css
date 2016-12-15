@@ -4,6 +4,12 @@ iframe
 	position: absolute;
 	left:0; 
 	top:0;
+	
+}
+#content{
+	
+	margin-top: 105px;
+	border: #aef7e7 ridge 5px;
 }
 
 img{

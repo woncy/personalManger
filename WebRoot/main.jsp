@@ -10,8 +10,11 @@
 <body>
 <iframe src="navigation_bar.jsp" height="652px" width="157px" frameborder="0" scrolling="no" class="iframe"></iframe>
 <div>
-	<iframe src="top.jsp" height="105px" width="830px" frameborder="0" scrolling="no" class="iframe"></iframe>
+	<iframe src="top.jsp" height="105px" width="1600" frameborder="0" scrolling="no" class="iframe"></iframe>
+	<!--  
 	<img src="img/back.JPG">
+	-->
+	<iframe id="content" src="add_employee_file.jsp" width="1600" height="900px"></iframe>
 </div>
 </body>
 </html>
