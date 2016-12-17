@@ -13,7 +13,7 @@
 
 		<p>人事管理</p>
 		<ul type="disc">
-			<li><a href="">档案管理</a></li>
+			<li><a href="AddRecordUI.do" target="content">档案管理</a></li>
 			<li><a href="">考勤管理</a></li>
 			<li><a href="">奖惩管理</a></li>
 			<li><a href="">培训管理</a></li>

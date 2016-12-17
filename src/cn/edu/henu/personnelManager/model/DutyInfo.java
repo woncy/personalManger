@@ -5,9 +5,7 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 
@@ -19,7 +17,7 @@ public class DutyInfo implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	private int id;
-	private Department dept;			//部门
+	private Job job;
 	private Record record;				//档案
 	private Date accession_date;		//入职日期
 	private Date dimission_date;		//离职日期
@@ -52,14 +50,12 @@ public class DutyInfo implements Serializable {
 	public void setRecord(Record record) {
 		this.record = record;
 	}
-	
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	public Department getDept() {
-		return dept;
+	@OneToOne
+	public Job getJob() {
+		return job;
 	}
-	public void setDept(Department dept) {
-		this.dept = dept;
+	public void setJob(Job job) {
+		this.job = job;
 	}
 	@Column(nullable=false)
 	@DateTimeFormat(pattern="yyyy-DD-MM")

@@ -25,17 +25,18 @@ public class TestDepartmentService {
 	}
 	@Test
 	public void testAddDepartmentByNameAndUpdept(){
-		Department dept =deptService.getDepartmentById(1);
-		/**
 		
-		deptService.addDepartmentByNameAndUpDept("人事部", null);
-		deptService.addDepartmentByNameAndUpDept("销售部", null);
-		deptService.addDepartmentByNameAndUpDept("经理办公室", null);
-		 */
+		
+//		deptService.addDepartmentByNameAndUpDept("开发部", null);
+//		deptService.addDepartmentByNameAndUpDept("人事部", null);
+//		deptService.addDepartmentByNameAndUpDept("销售部", null);
+//		deptService.addDepartmentByNameAndUpDept("经理办公室", null);
+		Department dept =deptService.getDepartmentById(61);
 		deptService.addDepartmentByNameAndUpDept("JAVA", dept);
 		deptService.addDepartmentByNameAndUpDept("C++", dept);
 		deptService.addDepartmentByNameAndUpDept("软件工程", dept);
 		deptService.addDepartmentByNameAndUpDept("软件测试", dept);
+		
 		
 		
 	}

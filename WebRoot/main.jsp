@@ -17,7 +17,7 @@
 	<!--  
 	<img src="img/back.JPG">
 	-->
-	<iframe id="content" onload="changeFrameHeight()" height="550" style="margin-top:0px;"src="file_management.jsp" ></iframe>
+	<iframe name="content"  id="content" onload="changeFrameHeight()" height="550" style="margin-top:0px;"src="main_img.jsp" ></iframe>
 </div>
 </body>
 <script type="text/javascript">

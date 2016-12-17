@@ -130,7 +130,7 @@ public class TestRecordService  {
 		info.setLikes("象棋、跳棋");
 		info.setOnes_strong_suit("suit");
 		info.setPostalcode("463700");
-		DepartmentService deptService = (DepartmentService) ctx.getBean("departmentService");
+		
 		
 		DutyInfo duty = new DutyInfo();
 		duty.setAccession_date(new Date());
@@ -138,8 +138,6 @@ public class TestRecordService  {
 		duty.setBank_name("建设银行");
 		duty.setBank_NO("6217002490002291081");
 		duty.setComopo_safety_No("22121515444");
-		Department dept = deptService.getDepartmentById(5);
-		duty.setDept(dept);
 		duty.setDimission_date(new Date());
 		duty.setDimission_reason("不想干了");
 		duty.setDole_safety_NO("1154231564545");

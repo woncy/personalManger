@@ -15,7 +15,7 @@
 <div  class="panel panel-info">
 	<div class="panel-heading">
 		<div class="btn-group">
-		  <button type="button" class="btn btn-default">新建员工档案</button>
+		  <a href="add_employee_file.jsp" target="content"><button type="button" class="btn btn-default">新建员工档案</button></a>
 		  <button type="button" class="btn btn-default">修改员工档案</button>
 		</div>
 	</div>

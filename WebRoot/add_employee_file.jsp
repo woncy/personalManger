@@ -1,6 +1,10 @@
+
+<%@page import="cn.edu.henu.personnelManager.model.Department"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <%
 String path = request.getContextPath();
  %>
@@ -15,9 +19,9 @@ String path = request.getContextPath();
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 
 </head>
-<body>
+<body onload="change()">
 <div class="panel panel-default">
-	<form action="<%=path %>/AddRecord.do" id="box" method="post">
+	<form action="<%=path %>/AddRecord.do" target="content" id="box" method="post">
 		
 		<div id="div1" class="panel-body">
 			<div id="div2" class="panel panel-default">
@@ -113,20 +117,63 @@ String path = request.getContextPath();
 					<tr>
 						<td>&nbsp;&nbsp;部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门:</td>
 						<td>
-							<select class="form-control" name="">
-								<c:forEach items="">
-									<option></option>	
+						
+						<script type="text/javascript">
+								var jobs = new Array();
+								var ids = new Array();
+								
+								<%
+									String[][] jobs = (String [][])request.getAttribute("jobs");
+									int[][] ids = (int[][])request.getAttribute("job_id");
+									int i=0;
+									for(i=0;i<jobs.length;i++){
+								%>
+									jobs[<%=i%>] = new Array();
+									ids[<%=i%>] = new Array();
+								<%
+										for(int j=0;j<jobs[i].length;j++){
+								%>
+									jobs[<%=i%>][<%=j%>] = "<%=jobs[i][j]%>";
+									ids[<%=i%>][<%=j%>] = <%=ids[i][j]%>;
+								<%
+										}
+								%>
+								<%
+									}
+								%>
+								
+								
+						</script>
+		
+							<select id="dept" class="form-control" name="department"  onchange="change()">
+								<c:forEach items="${depts }" var="dept" varStatus="status">
+									<option value="${dept.id }">${dept }</option>	
 								</c:forEach>
 							</select>
 						</td>
 						<td>&nbsp;&nbsp;职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务:</td>
 						<td>
-							<select class="form-control" name="">
-								<option>经理</option>
-								<option>职员</option>
-								<option>CEO</option>
-								<option>保洁</option>
+							<select id="job" class="form-control" name="jobName">
+								
 							</select>
+							<script type="text/javascript">
+								var dept = document.getElementById("dept");
+								
+								function change(){
+									var job = document.getElementById("job");
+									document.all.job.options.length = 0;
+									for(var i=0;i<dept.length;i++){
+										if(dept[i].selected==true){
+											for(var j=0;j<jobs[i].length;j++){
+												var op = new Option(jobs[i][j],ids[i][j]);
+	        									job.options.add(op);
+											}
+											
+										}
+									}
+								}
+								
+							</script>
 						</td>
 						<td>&nbsp;&nbsp;</td>
 						<td>&nbsp;&nbsp;</td>

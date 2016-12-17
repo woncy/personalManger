@@ -58,6 +58,7 @@
        	<mapping class="cn.edu.henu.personnelManager.model.BringUpContent"/>
     	<mapping class="cn.edu.henu.personnelManager.model.BringUpOntent"/>
     	<mapping class="cn.edu.henu.personnelManager.model.Department"/>
+    	<mapping class="cn.edu.henu.personnelManager.model.Job"/>
     </session-factory>
 
 </hibernate-configuration>

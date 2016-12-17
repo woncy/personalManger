@@ -119,10 +119,13 @@ public class DepartmentDaoImpl extends SuperDao implements DepartmentDao {
 		
 		try{
 			List<Department> depts2 = this.getHibernateTemplate().findByExample(deptment);
+			
 			if(depts2 != null){
 				Department department3 = new Department();
 				department3.setDepartment(depts2.get(0));
-				depts = this.getHibernateTemplate().findByExample(department3);
+				String hql = "from cn.edu.henu.personnelManager.model.Department as d where d.department=:dept";
+				depts = this.getHibernateTemplate().findByNamedParam(hql, "dept", depts2.get(0));
+			
 			}
 		}catch(Exception e){
 			return null;

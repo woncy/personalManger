@@ -14,6 +14,8 @@ public class RecordForm extends ActionForm {
 	Record record = new Record();
 	PersonalInfo personalInfo = new PersonalInfo();
 	DutyInfo duty = new DutyInfo();
+	private String department;
+	private String jobName;
 	private String birthDay;
 	private String accession_date; //入职日期
 	private String dimission_date; //离职日期
@@ -81,6 +83,20 @@ public class RecordForm extends ActionForm {
 	public void setParty_member_date(String party_member_date) {
 		this.party_member_date = party_member_date;
 	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public String getJobName() {
+		return jobName;
+	}
+	public void setJobName(String jobName) {
+		this.jobName = jobName;
+	}
+	
+	
 	
 	
 	

@@ -12,11 +12,11 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import cn.edu.henu.personnelManager.model.Department;
 import cn.edu.henu.personnelManager.model.DutyInfo;
+import cn.edu.henu.personnelManager.model.Job;
 import cn.edu.henu.personnelManager.model.PersonalInfo;
 import cn.edu.henu.personnelManager.model.Record;
-import cn.edu.henu.personnelManager.service.abs.DepartmentService;
+import cn.edu.henu.personnelManager.service.abs.JobService;
 import cn.edu.henu.personnelManager.service.abs.RecordService;
 import cn.edu.henu.personnelManager.struts.formbean.RecordForm;
 
@@ -73,16 +73,17 @@ public class AddRecordAction extends Action {
 			info.setParty_member_date(party_member_date);
 		}
 		
-		
 		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("beans.xml");
 		RecordService service = (RecordService) ctx.getBean("recordService");
-		DepartmentService deptService = (DepartmentService) ctx.getBean("departmentService");
-		Department dept = deptService.getDepartmentById(1);
-		duty.setDept(dept);
-		boolean b =	service.addRecord(record, info, duty);
 		
-System.out.println(b);
+		String jobName = recordForm.getJobName();
+		int jobId = Integer.parseInt(jobName);
+		JobService jobService = (JobService) ctx.getBean("jobService");
+		Job job = jobService.getJob(jobId);
+		duty.setJob(job);
+		service.addRecord(record, info, duty);
+
 		ctx.close();
-		return super.execute(mapping, form, request, response);
+		return mapping.findForward("main");
 	}
 }
