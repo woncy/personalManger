@@ -84,6 +84,6 @@ public class AddRecordAction extends Action {
 		service.addRecord(record, info, duty);
 
 		ctx.close();
-		return mapping.findForward("main");
+		return mapping.findForward("success");
 	}
 }

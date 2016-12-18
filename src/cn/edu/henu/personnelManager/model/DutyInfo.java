@@ -73,7 +73,6 @@ public class DutyInfo implements Serializable {
 	public void setFirst_pack_date(Date first_pack_date) {
 		this.first_pack_date = first_pack_date;
 	}
-	@Column(nullable=false)
 	@DateTimeFormat(pattern="yyyy-DD-MM")
 	public Date getDimission_date() {
 		return dimission_date;
@@ -81,7 +80,7 @@ public class DutyInfo implements Serializable {
 	public void setDimission_date(Date dimission_date) {
 		this.dimission_date = dimission_date;
 	}
-	@Column(length=100,nullable=false)
+	@Column(length=100)
 	public String getDimission_reason() {
 		return dimission_reason;
 	}

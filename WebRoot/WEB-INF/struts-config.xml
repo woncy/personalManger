@@ -48,6 +48,9 @@
     <form-bean
             name="recordForm"
             type="cn.edu.henu.personnelManager.struts.formbean.RecordForm"/>
+     <form-bean
+            name="timecardForm"
+            type="cn.edu.henu.personnelManager.struts.formbean.TimecardForm"/>
    
 
     <!-- sample form bean descriptor for a DynaActionForm
@@ -83,7 +86,8 @@
         <!-- Default forward to "Welcome" action -->
         <!-- Demonstrates using index.jsp to forward -->
        <forward name="main" path="/main.jsp"></forward>
-       <forward name="login" path="/login.jsp"></forward>
+       <forward name="addSuccess" path="/addSuccess.jsp"> </forward>
+       <forward name="addFaild" path="/addFaild.jsp"></forward>
     </global-forwards>
 
 
@@ -99,13 +103,34 @@
             name="recordForm"
             scope="request"
             validate="true"
-            input="/add_reployee_file.jsp"/>
+            input="/add_reployee_file.jsp">
+            	<forward name="success" path="/addSuccess.jsp"> </forward>
+           </action>
+           
+           <action
+            path="/AddTimeCard"
+            type="cn.edu.henu.personnelManager.struts.action.AddTimeCardAction"
+            name="timecardForm"
+            scope="request"
+            validate="true"
+            input="/att.jsp">
+            	
+           </action>
+           
+           
             
             <action
 	            path="/AddRecordUI"
 	            type="cn.edu.henu.personnelManager.struts.action.AddRecordUIAction"
 	            scope="request">
 	            <forward name="success" path="/add_employee_file.jsp"></forward>
+	        
+	         </action>
+	         <action
+	            path="/AddTimeCardUI"
+	            type="cn.edu.henu.personnelManager.struts.action.AddTimeCardUIAction"
+	            scope="request">
+	            <forward name="success" path="/att.jsp"></forward>
 	        
 	         </action>
 		

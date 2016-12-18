@@ -2,12 +2,11 @@ package cn.edu.henu.personnelManager.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 @Entity(name="tb_reckoning_list")
 public class ReckoningList implements Serializable{
 
@@ -21,7 +20,7 @@ public class ReckoningList implements Serializable{
 	
 	
 	@Id
-	@Column(name="record_id")
+	@GeneratedValue
 	public int getId() {
 		return id;
 	}
@@ -29,7 +28,6 @@ public class ReckoningList implements Serializable{
 		this.id = id;
 	}
 	@OneToOne
-	 @PrimaryKeyJoinColumn
 	public Record getRecord() {
 		return record;
 	}

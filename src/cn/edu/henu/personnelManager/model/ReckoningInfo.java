@@ -16,6 +16,7 @@ public class ReckoningInfo implements Serializable{
 	private int id;
 	private Reckoning reckoning;
 	private AccountItem accountItem;
+	private int money;
 	@Id
 	@GeneratedValue
 	public int getId() {
@@ -38,5 +39,12 @@ public class ReckoningInfo implements Serializable{
 	public void setAccountItem(AccountItem accountItem) {
 		this.accountItem = accountItem;
 	}
+	public int getMoney() {
+		return money;
+	}
+	public void setMoney(int money) {
+		this.money = money;
+	}
+	
 	
 }
